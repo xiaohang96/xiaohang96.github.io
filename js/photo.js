@@ -1,10 +1,10 @@
-define([], function () {
+    define([], function () {
         return {
             page: 1,
             offset: 20,
             init: function () {
                 var that = this;
-                $.getJSON("/photo/output.json", function (data) {
+                $.getJSON("/photos/data.json", function (data) {
                     that.render(that.page, data);
 
                     that.scroll(data);
@@ -18,8 +18,8 @@ define([], function () {
                 var html, li = "";
                 for (var i = begin; i < end && i < data.length; i++) {
                     li += '<li><div class="img-box">' +
-                        '<a class="img-bg" rel="example_group" href="https://github.com/xiaohang96/xiaohang96.github.io.git/images' + data[i] + '?raw=true"></a>' +
-                        '<img lazy-src="https://github.com/lwzhang/blog/blob/master/images' + data[i] + '?raw=true" />' +
+                        '<a class="img-bg" rel="example_group" href="https://github.com/xiaohang96/myblog/tree/master/photos/' + data[i] + '?raw=true"></a>' +
+                        '<img lazy-src="https://github.com/xiaohang96/myblog/tree/master/photos/' + data[i] + '?raw=true" />' +
                         '</li>';
                 }
 
